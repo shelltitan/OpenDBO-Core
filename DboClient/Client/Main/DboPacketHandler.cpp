@@ -2478,7 +2478,7 @@ void PacketHandler_GSCharStateWrong(void *pPacket)
 		sGU_CHAR_STATE_WRONG *pStateWrong = (sGU_CHAR_STATE_WRONG*)pPacket;
 
 		RwChar chBuffer[1024];
-		sprintf_s(chBuffer, 1024, "opcode(%s - 현 상태에서 처리할 수 없는 event), handle(%d) => send opcode(%s), server current state(%s)",
+		sprintf_s(chBuffer, 1024, "opcode(%s - Cannot be handled in its current state event), handle(%d) => send opcode(%s), server current state(%s)",
 			NtlGetPacketName(pStateWrong->wOpCode), pStateWrong->handle, NtlGetPacketName(pStateWrong->wPrevOPCode), NtlGetCharStateString(pStateWrong->byStateID) );
 
 		WCHAR wMsg[1024];
@@ -2493,7 +2493,7 @@ void PacketHandler_GSCharStateWrong(void *pPacket)
 	sGU_CHAR_STATE_WRONG *pStateWrong = (sGU_CHAR_STATE_WRONG*)pPacket;
 
 	RwChar chBuffer[1024];
-	sprintf_s(chBuffer, 1024, "opcode(%s - 현 상태에서 처리할 수 없는 event), handle(%d) => send opcode(%s), server current state(%s)",
+	sprintf_s(chBuffer, 1024, "opcode(%s - Cannot be handled in its current state event), handle(%d) => send opcode(%s), server current state(%s)",
 		NtlGetPacketName(pStateWrong->wOpCode), pStateWrong->handle, NtlGetPacketName(pStateWrong->wPrevOPCode), NtlGetCharStateString(pStateWrong->byStateID) );
 
 	WCHAR wMsg[1024];

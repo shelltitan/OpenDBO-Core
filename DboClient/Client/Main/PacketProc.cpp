@@ -22,14 +22,14 @@
 
 void NetworkLogCallback(const char *pNetLog)
 {
-//#ifndef NDEBUG
+#ifndef NDEBUG
 
 	std::string str = "network lib : ";
 	str += pNetLog;
 
 	NtlLogFilePrint((RwChar*)str.c_str());
 
-//#endif
+#endif
 
 #ifdef  _ENABLE_PACKET_TRACE_
 	GetDumpCmdManager()->RecvNet(pNetLog);
